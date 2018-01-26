@@ -16,6 +16,7 @@ def test_invalid_json():
     with pytest.raises(BinanceRequestException):
         with requests_mock.mock() as m:
             m.get('https://www.binance.com/exchange/public/product', text='<head></html>')
+            print(m)
             client.get_products()
 
 
